@@ -1,6 +1,6 @@
 html, body{
 	font-family: Lobster;
-	color: white;
+	color: darkgrey;
 	height: 100%;
 	min-height: 100%;
 }
@@ -24,4 +24,10 @@ h3{text-align: center;font-size: 28px;margin-top: 20px;}
 #search{margin: 100px auto;width: 500px;}
 
 .btn, input{font-family: 'roboto'}
+
+.list-inline{color: red;}
+
+.media-object{max-width:150px;}
+
+h4{color:purple;}
 

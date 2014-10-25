@@ -2,7 +2,7 @@
 
 namespace app\controllers;
  
-class TravelightController extends \lithium\action\Controller {
+class TravelightController extends GenericController {
 
 	public function index() {
 		

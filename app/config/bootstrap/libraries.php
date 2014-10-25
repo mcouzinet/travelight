@@ -105,11 +105,14 @@ require LITHIUM_LIBRARY_PATH . '/lithium/template/view/adapter/File.php';
 require LITHIUM_LIBRARY_PATH . '/lithium/storage/Cache.php';
 require LITHIUM_LIBRARY_PATH . '/lithium/storage/cache/adapter/Apc.php';
 
+require LITHIUM_LIBRARY_PATH . '/../vendor/autoload.php';
+
 /**
  * Add the Lithium core library.  This sets default paths and initializes the autoloader.  You
  * generally should not need to override any settings.
  */
 Libraries::add('lithium');
+
 
 /**
  * Add the application.  You can pass a `'path'` key here if this bootstrap file is outside of
