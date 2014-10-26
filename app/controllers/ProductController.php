@@ -46,7 +46,7 @@ class ProductController extends GenericController {
 			$productArray['tags'] = explode(',', $tags);
 
 			try {
-			    $product->save();
+			    error_log($product->save());
 
                 $algolia  = new Client("16KEY7M17V", "f1ea7eed61f3cc5945a3a84556b3ffbf");
 
