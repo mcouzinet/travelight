@@ -10,12 +10,17 @@ class ProductController extends GenericController {
 
 	public function create() {
 
+        if(!User::current()){
+            return $this->redirect('/login');
+        }
+
 
         if($this->request->data){
 
-            error_log(print_r($this->request->data, true));
+            error_log( mb_strlen('dsfsdf'));
 
 			$product = new ParseObject("Produits");
+
 
 
 
@@ -28,9 +33,7 @@ class ProductController extends GenericController {
             $tags = $this->extractData('tags', $this->request->data);
             $imgname = '/productimg/'.strtotime("now").$_FILES['imgproduct']['name'];
             $img_path = LITHIUM_APP_PATH . '/webroot/'.$imgname;
-            if(move_uploaded_file($_FILES['imgproduct']['tmp_name'], $img_path)){
-
-            };
+            move_uploaded_file($_FILES['imgproduct']['tmp_name'], $img_path);
 
 			$product->set("name", $name);
 			$product->set("price", $price);
