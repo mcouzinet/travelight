@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d3f110e-4a35-4ee3-b6ee-932abdaaa2b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/webroot/img/iconss.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/webroot/img/icons.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ProductController.php" afterPath="$PROJECT_DIR$/app/controllers/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/js/app.js" afterPath="$PROJECT_DIR$/app/webroot/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/bootstrap-checkbox.css" afterPath="$PROJECT_DIR$/app/webroot/css/bootstrap-checkbox.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/product/create.html.php" afterPath="$PROJECT_DIR$/app/views/product/create.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/default.html.php" afterPath="$PROJECT_DIR$/app/views/layouts/default.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/travelight/index.html.php" afterPath="$PROJECT_DIR$/app/views/travelight/index.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/login.html.php" afterPath="$PROJECT_DIR$/app/views/user/login.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/signup.html.php" afterPath="$PROJECT_DIR$/app/views/user/signup.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/travelight.css" afterPath="$PROJECT_DIR$/app/webroot/css/travelight.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="8d3f110e-4a35-4ee3-b6ee-932abdaaa2b8" name="Default" comment="" />
     <ignored path="travelight.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
