@@ -50,6 +50,7 @@
 
                 <div id="hits"></div>
 
+                <div class="clearfix"></div>
                 <!-- Pagination -->
                 <div id="pagination"></div>
                 <!-- /Pagination -->
@@ -100,22 +101,24 @@
 <!-- Hit template -->
 <script type="text/template" id="hit-template">
     <div class="hit media">
-        <a class="pull-left linkimg" href="{{ url }}" style="background: url({{ urlpicture }}) no-repeat center center;background-size: cover;">
+        <a class="pull-left linkimg" href="/product/{{ objectID }}" style="background: url({{ urlpicture }}) no-repeat center center;background-size: cover;">
         </a>
-        <div class="media-body">
-            <h3 class="pull-right text-right text-danger price">
-                ${{ price }}
-            </h3>
-            <h4>{{{ _highlightResult.name.value }}}</h4>
-            <p class="text-muted">
-                {{{ shortdescription }}}
-            </p>
-            <ul class="list-inline">
-                <li>{{{ _highlightResult.type.value }}}</li>
-                <li>{{{ _highlightResult.category.value }}}</li>
-                <li>{{ type }}</li>
-            </ul>
-        </div>
+        <a href="/product/{{ objectID }}">
+            <div class="media-body">
+                <h3 class="pull-right text-right text-danger price">
+                    ${{ price }}
+                </h3>
+                <h4>{{{ _highlightResult.name.value }}}</h4>
+                <p class="text-muted">
+                    {{{ shortdescription }}}
+                </p>
+                <ul class="list-inline">
+                    <li>{{{ _highlightResult.type.value }}}</li>
+                    <li>{{{ _highlightResult.category.value }}}</li>
+                    <li>{{ type }}</li>
+                </ul>
+            </div>
+        </a>
     </div>
 </script>
 

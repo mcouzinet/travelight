@@ -5,7 +5,8 @@ namespace app\controllers;
 use app\models\User;
 use Parse\ParseObject;
 use AlgoliaSearch\Client;
- 
+use Parse\ParseQuery;
+
 class ProductController extends GenericController {
 
 	public function create() {
@@ -14,9 +15,14 @@ class ProductController extends GenericController {
             return $this->redirect('/login');
         }
 
+        $this->set(array(
+            'user' => User::current()
+        ));
+
+
 
         if($this->request->data){
-            
+
 			$product = new ParseObject("Produits");
 
 			$name = $this->extractData('title', $this->request->data);
@@ -64,21 +70,28 @@ class ProductController extends GenericController {
 			  error_log('Failed to create new object, with error message: ' + $ex->getMessage());
 			}
 
-
+            return $this->redirect('/product/'.$product->getObjectId());
 		
 		}
 
-        $this->set(array(
-            'user' => User::current()
-        ));
 
         return $this->render();
 	}
 
 	public function get() {
 
+        $id = $this->request->id;
+
+        $query = new ParseQuery("Produits");
+        try {
+            $product = $query->get($id);
+        } catch (ParseException $ex) {
+        }
+
+
         $this->set(array(
-            'user' => User::current()
+            'user' => User::current(),
+            'product' => $product
         ));
 
 		return $this->render();
