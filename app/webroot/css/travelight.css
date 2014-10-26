@@ -85,3 +85,7 @@ h4{color:purple;}
 .col-lg-offset-2 {
     margin-left: 12.666667%;
 }
+
+#pagination{margin-bottom: 30px;}
+
+footer{height:30px;background-color: white;text-align: center;padding: 5px;position: fixed;bottom:0px;width: 100%;z-index: 2000;}

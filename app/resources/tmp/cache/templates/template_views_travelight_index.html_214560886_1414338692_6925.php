@@ -43,11 +43,11 @@
         <p>Save time and money</p>
     </div>
     <div class="col-lg-3 ">
-        <img src="/img/MeetLocals.png">
+        <img src="/img/enjoy.png">
         <p>Meet amazing locals</p>
     </div>
     <div class="col-lg-3">
-        <img src="/img/enjoy.png">
+        <img src="/img/MeetLocals.png">
         <p>Enjoy your trip</p>
     </div>
 

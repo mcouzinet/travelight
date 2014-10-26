@@ -13,6 +13,11 @@
 		<?php echo $this->content(); ?>
 	</div>
 
+    <footer>
+
+       <a href="https://www.facebook.com/pages/Travelight/988731907819463?ref=ts&fref=ts" target="_blank">Facebook</a> - <a href="https://twitter.com/Travelight_" target="_blank">Twitter</a>   - © Travelight. All right reserved <a href="mailto:al.chorro@gmail.com">Contact</a>
+    </footer>
+
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyDmtOKA8ckDlwGGCqojSTcsX-j00gdg8iI"></script>
     <script src="//cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
