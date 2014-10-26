@@ -10,11 +10,17 @@ class ProductController extends GenericController {
 
 	public function create() {
 
+        $product = new ParseObject("Produits");
+
+        error_log(print_r($product,true));
+
         if($this->request->data){
 
             error_log(print_r($this->request->data, true));
 
 			$product = new ParseObject("Produits");
+
+            error_log(print_r($product,true));
 
 			$name = $this->extractData('title', $this->request->data);
 			$price = (int) $this->extractData('price', $this->request->data);
@@ -25,7 +31,9 @@ class ProductController extends GenericController {
             $tags = $this->extractData('tags', $this->request->data);
             $imgname = '/productimg/'.strtotime("now").$_FILES['imgproduct']['name'];
             $img_path = LITHIUM_APP_PATH . '/webroot/'.$imgname;
-            move_uploaded_file($_FILES['imgproduct']['tmp_name'], $img_path);
+            if(move_uploaded_file($_FILES['imgproduct']['tmp_name'], $img_path)){
+
+            };
 
 			$product->set("name", $name);
 			$product->set("price", $price);
@@ -46,7 +54,7 @@ class ProductController extends GenericController {
 			$productArray['tags'] = explode(',', $tags);
 
 			try {
-			    error_log($product->save());
+			    $product->save();
 
                 $algolia  = new Client("16KEY7M17V", "f1ea7eed61f3cc5945a3a84556b3ffbf");
 
