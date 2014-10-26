@@ -14,7 +14,6 @@
             <a href="#" class="btn btn-success"><?=$user->email?></a>
             <a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-search"></span> See my product</a></li>
                 <li><a href="/product"><span class="glyphicon glyphicon-plus"></span> Add a product</a></li>
                 <li class="divider"></li>
                 <li><a href="/logout"><span class="glyphicon glyphicon-remove"></span> Logout</a></li>

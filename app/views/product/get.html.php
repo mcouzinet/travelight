@@ -12,7 +12,7 @@
 
     <div class="productimg" style="background: url(<?=$product->urlpicture?>) no-repeat center center;background-size: cover;">
 
-        <button class="btn btn-success">Contact sellman</button>
+
     </div>
 
     <div class="desc">
@@ -27,8 +27,7 @@
 
     </div>
 
-
-
-
+    <button class="btn btn-success contact">Contact seller</button>
 
 </div>
+<div class="spacer100"></div>

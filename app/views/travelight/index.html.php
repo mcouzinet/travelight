@@ -4,7 +4,7 @@
 	<h2>Travelight</h2>
     </a>
 	<h1>Sell, Buy, rent and swap travel products</h1>
-	<h3>Save money, whenever you want, whenever you go</h3>
+	<h3>Save money, whenever you want, wherever you go</h3>
 
     <?php if(!$user): ?>
 	<div id="btns">
@@ -17,7 +17,6 @@
             <a href="#" class="btn btn-success"><?=$user->email?></a>
             <a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-search"></span> See my product</a></li>
                 <li><a href="/product"><span class="glyphicon glyphicon-plus"></span> Add a product</a></li>
                 <li class="divider"></li>
                 <li><a href="/logout"><span class="glyphicon glyphicon-remove"></span> Logout</a></li>
@@ -35,6 +34,23 @@
             </span>
 	  </div>
 	</div>
+</div>
+
+<div class="container threepoint">
+
+    <div class="col-lg-3 col-lg-offset-1">
+        <img src="/img/Travelcc.png">
+        <p>Save time and money</p>
+    </div>
+    <div class="col-lg-3 col-lg-offset-1">
+        <img src="/img/MeetLocals.png">
+        <p>Meet amazing locals</p>
+    </div>
+    <div class="col-lg-3 col-lg-offset-1">
+        <img src="/img/enjoy.png">
+        <p>Enjoy your trip</p>
+    </div>
+
 </div>
 
 
