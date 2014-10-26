@@ -25,6 +25,8 @@ class UserController extends GenericController {
 
                 $user->signUp();
 
+                return $this->redirect('/');
+
             } catch (ParseException $ex) {
                 $this->renderJSON(400, "Wrong credentials");
             }
