@@ -22,8 +22,6 @@ class ProductController extends GenericController {
 			$product = new ParseObject("Produits");
 
 
-
-
 			$name = $this->extractData('title', $this->request->data);
 			$price = (int) $this->extractData('price', $this->request->data);
 			$description = $this->extractData('description', $this->request->data);
