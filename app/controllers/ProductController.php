@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\User;
 use Parse\ParseObject;
 use AlgoliaSearch\Client;
  
@@ -39,11 +40,18 @@ class ProductController extends GenericController {
 		
 		}
 
-		return $this->render();
+        $this->set(array(
+            'user' => User::current()
+        ));
+
+        return $this->render();
 	}
 
 	public function get() {
 
+        $this->set(array(
+            'user' => User::current()
+        ));
 
 		return $this->render();
 	}

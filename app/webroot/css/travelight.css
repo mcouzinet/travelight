@@ -1,10 +1,27 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Regular'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v14/oMMgfZMQthOryQo9n22dcn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'), local('Roboto-Medium'), url(http://fonts.gstatic.com/s/roboto/v14/RxZJdnzeo3R5zSexge8UUYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/Lobster.otf);
+}
+
 html, body{font-family: 'roboto';color: darkgrey;height: 100%; min-height: 100%;  }
-
 body.back { background: url(/img/back.jpg)no-repeat center center fixed;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;  }
-
-.content{background: rgba(0, 0, 0, 0.4);width: 100%;min-height: 100%;}
-
-
+.content{background: rgba(0, 0, 0, 0.2);width: 100%;min-height: 100%;}
 
 #header{width: 1170px;margin: 0 auto;position: relative;padding-top: 30px; font-family: Lobster;color:white;transition: all 1s;}
 #header img{width:91px;transition: all 1s;}
@@ -14,25 +31,18 @@ body.back { background: url(/img/back.jpg)no-repeat center center fixed;-webkit-
 #header #btns{position: absolute;right: 0px;top:40px;font-family: 'roboto'; transition: all 1s;}
 #search{margin: 100px auto;width: 500px;transition: all 1s;}
 .white{color: #fff;}
-
 #header.hcenter{width:350px;}
-
 .list-inline{color: red;}
-
 .media-object{max-width:150px;}
-
 h4{color:purple;}
-
-
 .formlog{max-width:600px;margin:20px auto 0;background-color:#FFFFFF;padding: 40px;border-radius:10px;}
 .formlog legend{text-align: center;color:#000;font-size: 25px}
 .formlog span{float: right}
-
 .haveResults h1, .haveResults h3{opacity:0;}
 .haveResults #header h2{font-size: 25px;top:22px;left: 55px;}
 .haveResults #header img{width: 44px;}
 .haveResults #header{padding-top: 32px;}
 .haveResults #header #btns{top: 28px;}
 .haveResults #search{margin: -200px auto 30px;}
-
 #results{background-color: #fff; padding-top: 25px;}
+.formadd{background-color: white;}
