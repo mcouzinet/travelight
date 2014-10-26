@@ -2,20 +2,35 @@
 
 namespace app\controllers;
 
+use app\models\User;
 use Parse\ParseUser;
+use Parse\ParseException;
  
 class UserController extends GenericController {
 
 	public function signup() {
 
-		$user = new ParseUser();
-		$user->setUsername("foo");
-		$user->setPassword("Q2w#4!o)df");
-		try {
-		  $user->signUp();
-		} catch (ParseException $ex) {
-		  // error in $ex->getMessage();
-		}
+        $user = new ParseUser();
+
+        if($this->request->data){
+
+            $mail = $this->extractData("mail", $this->request->data);
+            $password = $this->extractData("password", $this->request->data);
+
+            $user->setUsername($mail);
+            $user->setEmail($mail);
+            $user->setPassword($password);
+
+            try {
+
+                $user->signUp();
+
+            } catch (ParseException $ex) {
+                $this->renderJSON(400, "Wrong credentials");
+            }
+
+        }
+
 		
 		return $this->render();
 	}
@@ -23,28 +38,39 @@ class UserController extends GenericController {
 
 	public function login() {
 
-		error_log(print_r($this->request->data,true));
-
 		if($this->request->data){
 
-			$user = new ParseUser();
-			$user->setUsername($this->request->data["username"]);
-			$user->setPassword($this->request->data["password"]);
+            $mail = $this->extractData("mail", $this->request->data);
+            $password = $this->extractData("password", $this->request->data);
 
 			try {
-			  $user->signUp();
-			  error_log('GOOD');
+
+                error_log($mail);
+                error_log($password);
+
+                $user = ParseUser::logIn($mail, $password);
+                User::current();
+
+                return $this->redirect('/');
+
 			} catch (ParseException $ex) {
-				error_log('BAD');
-			  // error in $ex->getMessage();
+                $this->renderJSON(400, "Wrong credentials");
 			}
 
 		}
 
-		
-		
-		return $this->render();
+        return $this->render();
 	}
+
+
+    public function logout() {
+
+        ParseUser::logOut();
+
+        return $this->redirect('/');
+
+    }
+
 }
 
 ?>

@@ -18,7 +18,7 @@
   var index = 'product'; // replace by your own index name
   var helper = new AlgoliaSearchHelper(algolia, index, {
     // list of conjunctive facets (link to refine)
-    facets: ['rent', 'shipping', 'customerReviewCount'],
+    facets: ['type', 'shipping', 'customerReviewCount'],
 
     // list of disjunctive facets (checkbox to refine)
     disjunctiveFacets: ['category', 'salePrice_range', 'manufacturer'],
@@ -39,7 +39,7 @@
   function sortByCountDesc(a, b) { return b.count - a.count; }
   function sortByNumAsc(a, b) { return parseInt(a.label) - parseInt(b.label); }
   var FACETS = {
-    'rent': { title: 'Rent', sortFunction: sortByCountDesc },
+    'type': { title: 'Type', sortFunction: sortByCountDesc },
     'shipping': { title: 'Shipping', sortFunction: sortByCountDesc },
     'customerReviewCount': { title: '# Reviews' },
     'salePrice_range': { title: 'Price', sortFunction: sortByNumAsc },
@@ -57,7 +57,8 @@
       return;
     }
 
-    console.log(content);
+    $('#results').removeClass('hide');
+    $('body').addClass('haveResults');
 
     // stats: render the number of results + processing time
     $stats.html($statsTemplate.render({ query: content.query, nbHits: content.nbHits.numberWithDelimiter(), processingTimeMS: content.processingTimeMS, nbHits_plural: content.nbHits != 1 }));
@@ -227,7 +228,7 @@
   }).focus();
 
   // load results
-  search();
+  //search();
 
   // click binding
   window.showMoreLess = function(link) {

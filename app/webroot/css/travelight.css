@@ -1,29 +1,21 @@
-html, body{
-	font-family: Lobster;
-	color: darkgrey;
-	height: 100%;
-	min-height: 100%;
-}
+html, body{font-family: 'roboto';color: darkgrey;height: 100%; min-height: 100%;  }
 
-body.back { 
-  background: url(/img/back.jpg)no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+body.back { background: url(/img/back.jpg)no-repeat center center fixed;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;  }
 
-.content{background: rgba(0, 0, 0, 0.4);width: 100%;height: 100%;}
+.content{background: rgba(0, 0, 0, 0.4);width: 100%;min-height: 100%;}
 
-h1{text-align: center;font-size: 50px;margin-top: 40px;}
-h3{text-align: center;font-size: 28px;margin-top: 20px;}
 
-#header{width: 1000px;margin: 0 auto;position: relative;padding-top: 30px;}
-#header h2{position: absolute;top:30px;left:100px;font-size: 40px;}
-#header #btns{position: absolute;right: 0px;top:40px;}
-#search{margin: 100px auto;width: 500px;}
 
-.btn, input{font-family: 'roboto'}
+#header{width: 1170px;margin: 0 auto;position: relative;padding-top: 30px; font-family: Lobster;color:white;transition: all 1s;}
+#header img{width:91px;transition: all 1s;}
+#header h1{text-align: center;font-size: 50px;margin-top: 40px;transition: all 1s;}
+#header h2{position: absolute;top:30px;left:100px;font-size: 40px;transition: all 1s;}
+#header h3{text-align: center;font-size: 28px;margin-top: 20px;}
+#header #btns{position: absolute;right: 0px;top:40px;font-family: 'roboto'; transition: all 1s;}
+#search{margin: 100px auto;width: 500px;transition: all 1s;}
+.white{color: #fff;}
+
+#header.hcenter{width:350px;}
 
 .list-inline{color: red;}
 
@@ -31,3 +23,16 @@ h3{text-align: center;font-size: 28px;margin-top: 20px;}
 
 h4{color:purple;}
 
+
+.formlog{max-width:600px;margin:20px auto 0;background-color:#FFFFFF;padding: 40px;border-radius:10px;}
+.formlog legend{text-align: center;color:#000;font-size: 25px}
+.formlog span{float: right}
+
+.haveResults h1, .haveResults h3{opacity:0;}
+.haveResults #header h2{font-size: 25px;top:22px;left: 55px;}
+.haveResults #header img{width: 44px;}
+.haveResults #header{padding-top: 32px;}
+.haveResults #header #btns{top: 28px;}
+.haveResults #search{margin: -200px auto 30px;}
+
+#results{background-color: #fff; padding-top: 25px;}

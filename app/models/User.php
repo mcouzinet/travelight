@@ -12,12 +12,11 @@ class User extends \lithium\data\Model {
 
         if(is_null(self::$_instance)){
 
-            $user = ParseUser::getCurrentUser();
+            $currentUser = ParseUser::getCurrentUser();
 
-            if($user){
-                self::$_instance = $user;
+            if($currentUser){
+                self::$_instance = $currentUser;
             }
-
         }
 
         return self::$_instance;

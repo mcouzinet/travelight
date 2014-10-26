@@ -12,7 +12,7 @@
     <?php else: ?>
 
         <div id="btns" class="btn-group">
-            <a href="#" class="btn btn-success"><?=$user->email?></a>
+            <a href="#" class="btn btn-success"><?php echo $h($user->email); ?></a>
             <a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#"><span class="glyphicon glyphicon-search"></span> See my product</a></li>
