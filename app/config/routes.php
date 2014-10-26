@@ -9,6 +9,7 @@ Router::connect('/product/{:id:}', 'Product::get');
 Router::connect('/login', 'User::login');
 Router::connect('/logout', 'User::logout');
 Router::connect('/signup', 'User::signup');
+Router::connect('/team', 'Travelight::team');
 
 
 ?>

@@ -14,6 +14,12 @@ class TravelightController extends GenericController {
 		
 		return $this->render();
 	}
+
+    public function team() {
+
+
+        return $this->render();
+    }
 }
 
 ?>
