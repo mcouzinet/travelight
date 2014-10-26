@@ -81,3 +81,7 @@ h4{color:purple;}
 .threepoint {position: relative;}
 .threepoint img{display: block;margin:0 auto;}
 .threepoint p{position:absolute;width:100%;top:120px;text-align: center;color: #fff;font-size: 20px;text-shadow: 0px 1px #000;}
+
+.col-lg-offset-2 {
+    margin-left: 12.666667%;
+}
