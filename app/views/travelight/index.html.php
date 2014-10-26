@@ -1,6 +1,8 @@
 <div id='header'>
+    <a href="/" class="white">
 	<img src="/img/logo.png">
 	<h2>Travelight</h2>
+    </a>
 	<h1>Sell, Buy, rent or swap travel products</h1>
 	<h3>Save money, meet awesome people, and consume less</h3>
 
@@ -37,7 +39,7 @@
 
 
 <!-- Results page -->
-<div id="results" class="">
+<div id="results" class="hide">
     <section class="container">
         <div class="row">
             <!-- Facets -->
@@ -75,7 +77,6 @@
             </div>
         </div>
     </section>
-    <div class="clearfix">dsfsdf</div>
 </div>
 <!-- /Results page -->
 
@@ -124,12 +125,12 @@
             <img class="media-object" src="{{ urlpicture }}" alt="{{ name }}">
         </a>
         <div class="media-body">
-            <h3 class="pull-right text-right text-danger">
+            <h3 class="pull-right text-right text-danger" style="color: red">
                 ${{ price }}
             </h3>
             <h4>{{{ _highlightResult.name.value }}}</h4>
             <p class="text-muted">
-                {{{ _highlightResult.description.value }}}
+                {{{ description }}}
             </p>
             <ul class="list-inline">
                 <li>{{{ _highlightResult.type.value }}}</li>
@@ -160,7 +161,7 @@
             <li class="list-group-item text-center list-group-item-info"><b>{{ title }}</b></li>
             <li class="list-group-item text-center">
                 <b>0</b>
-                <input type="text" data-slider-min="0" data-slider-max="{{ max }}" data-slider-step="1" data-slider-value="{{ current }}" data-slider-orientation="horizontal" data-slider-selection="after" id="{{ facet }}-slider" />
+                <input type="text" data-slider-min="0" data-slider-max="{{ max }}" data-slider-step="1" data-slider-value="{{ current }}" data-slider-orientation="horizontal" data-slider-selection="none" id="{{ facet }}-slider" />
                 <b>{{ max }}</b>
             </li>
         </ul>

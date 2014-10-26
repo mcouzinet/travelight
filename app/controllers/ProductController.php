@@ -42,7 +42,7 @@ class ProductController extends GenericController {
 		return $this->render();
 	}
 
-	public function find() {
+	public function get() {
 
 
 		return $this->render();

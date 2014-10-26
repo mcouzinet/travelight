@@ -15,15 +15,10 @@
   var $sliderTemplate = Hogan.compile($('#slider-template').text());
 
   // Helper initialization
-  var index = 'product'; // replace by your own index name
+  var index = 'product';
   var helper = new AlgoliaSearchHelper(algolia, index, {
-    // list of conjunctive facets (link to refine)
-    facets: ['type', 'shipping', 'customerReviewCount'],
-
-    // list of disjunctive facets (checkbox to refine)
-    disjunctiveFacets: ['category', 'salePrice_range', 'manufacturer'],
-
-    // number of results per page
+    facets: ['tags', 'transaction', 'price'],
+    disjunctiveFacets: ['transaction', 'tags'],
     hitsPerPage: 10
   });
 
@@ -40,14 +35,14 @@
   function sortByNumAsc(a, b) { return parseInt(a.label) - parseInt(b.label); }
   var FACETS = {
     'type': { title: 'Type', sortFunction: sortByCountDesc },
-    'shipping': { title: 'Shipping', sortFunction: sortByCountDesc },
+    'tags': { title: 'Tags', sortFunction: sortByCountDesc },
     'customerReviewCount': { title: '# Reviews' },
-    'salePrice_range': { title: 'Price', sortFunction: sortByNumAsc },
+    'price': { title: 'Price', sortFunction: sortByNumAsc },
     'manufacturer': { title: 'Manufacturer', sortFunction: sortByNumAsc },
-    'category': { title: 'Categories', sortFunction: sortByCountDesc }
+    'transaction': { title: 'Transaction', sortFunction: sortByCountDesc }
   };
   var refinements = {};
-  var minReviewsCount = 0;
+  var maxPrice = 0;
 
   // Callback called on each keystroke, rendering the results
   function searchCallback(success, content) {
@@ -78,9 +73,9 @@
       var facetType = (['facets', 'disjunctiveFacets'])[j];
 
       for (var facet in content[facetType]) {
-        if (facet === 'customerReviewCount') {
+        if (facet === 'price') {
           // add a slider fetching the 'max' value of 'customerReviewCount' from `content.facets_stats.customerReviewCount`
-          html += $sliderTemplate.render({ facet: facet, title: FACETS.customerReviewCount.title, max: content.facets_stats.customerReviewCount.max, current: minReviewsCount });
+          html += $sliderTemplate.render({ facet: facet, title: FACETS.price.title, max: content.facets_stats.price.max, current: maxPrice });
         } else {
           // other facets
 
@@ -115,7 +110,7 @@
     $facets.html(html);
 
     // bind slider
-    $('#customerReviewCount-slider').slider({
+    $('#price-slider').slider({
       formater: function(e) {
         if (e === 0) {
           return 'All';
@@ -123,7 +118,7 @@
         return '> ' + e;
       }
     }).on('slideStop', function(ev) {
-      minReviewsCount = ev.value;
+      maxPrice = ev.value;
       search();
     });
 
@@ -167,7 +162,7 @@
         }
       }
     }
-    location.replace('#q=' + encodeURIComponent(content.query) + '&page=' + content.page + '&minReviewsCount=' + minReviewsCount + '&refinements=' + encodeURIComponent(JSON.stringify(refinements)));
+    location.replace('#q=' + encodeURIComponent(content.query) + '&page=' + content.page + '&maxPrice=' + maxPrice + '&refinements=' + encodeURIComponent(JSON.stringify(refinements)));
 
     // scroll on top
     window.scrollTo(0, 0);
@@ -180,8 +175,8 @@
       maxValuesPerFacet: 50
     };
     // plug review_count slider refinement
-    if (minReviewsCount > 0) {
-      params.numericFilters = 'customerReviewCount>=' + minReviewsCount;
+    if (maxPrice > 0) {
+      params.numericFilters = 'maxPrice>=' + maxPrice;
     }
     // if we're sorting by something,
     // make the typo-tolerance more strict
@@ -197,12 +192,12 @@
   if (location.hash && location.hash.indexOf('#q=') === 0) {
     var params = location.hash.substring(3);
     var pageParamOffset = params.indexOf('&page=');
-    var minReviewsCountParamOffset = params.indexOf('&minReviewsCount=');
+    var maxPriceOffset = params.indexOf('&maxPrice=');
     var refinementsParamOffset = params.indexOf('&refinements=');
 
     var q = decodeURIComponent(params.substring(0, pageParamOffset));
-    var page = parseInt(params.substring(pageParamOffset + 6, minReviewsCountParamOffset));
-    minReviewsCount = parseInt(params.substring(minReviewsCountParamOffset + 17, refinementsParamOffset));
+    var page = parseInt(params.substring(pageParamOffset + 6, maxPriceOffset));
+    maxPrice = parseInt(params.substring(maxPriceOffset + 17, refinementsParamOffset));
     var refinements = JSON.parse(decodeURIComponent(params.substring(refinementsParamOffset + 13)));
 
     $q.val(q);
@@ -212,6 +207,7 @@
       }
     }
     helper.setPage(page);
+      search();
   }
 
   // input binding
@@ -220,7 +216,7 @@
     if ($q.val() != lastQuery) {
       lastQuery = $q.val();
       // performing a new full-text query reset the pagination and the refinements
-      minReviewsCount = 0;
+        maxPrice = 0;
       helper.setPage(0);
       helper.clearRefinements();
       search();
