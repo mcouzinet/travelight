@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d3f110e-4a35-4ee3-b6ee-932abdaaa2b8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/resources/tmp/cache/templates/template_views_product_get.html_214557243_1414336656_696.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/product/get.html.php" afterPath="$PROJECT_DIR$/app/views/product/get.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/travelight.css" afterPath="$PROJECT_DIR$/app/webroot/css/travelight.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/resources/tmp/cache/templates/template_views_travelight_index.html_214557261_1414336681_6956.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/webroot/productimg/1414333551toilette.jpg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/webroot/productimg/IMG1414326980" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/travelight/index.html.php" afterPath="$PROJECT_DIR$/app/views/travelight/index.html.php" />
     </list>
     <ignored path="travelight.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,20 +30,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/travelight/index.html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="55.625" vertical-offset="1605" max-vertical-offset="2685">
-              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.51258993" vertical-offset="435" max-vertical-offset="2685">
+              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="travelight.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="travelight.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/webroot/css/travelight.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6896552" vertical-offset="740" max-vertical-offset="1320">
+            <state vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="1320">
               <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
               <folding />
             </state>
@@ -175,10 +176,10 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/ProductController.php" />
-        <option value="$PROJECT_DIR$/app/views/travelight/index.html.php" />
         <option value="$PROJECT_DIR$/app/views/product/create.html.php" />
         <option value="$PROJECT_DIR$/app/views/product/get.html.php" />
         <option value="$PROJECT_DIR$/app/webroot/css/travelight.css" />
+        <option value="$PROJECT_DIR$/app/views/travelight/index.html.php" />
       </list>
     </option>
   </component>
@@ -796,14 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/travelight/index.html.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="55.625" vertical-offset="1605" max-vertical-offset="2685">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-31.291666" vertical-offset="329" max-vertical-offset="1590">
@@ -827,8 +820,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/webroot/css/travelight.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6896552" vertical-offset="740" max-vertical-offset="1320">
+        <state vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="1320">
           <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/travelight/index.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51258993" vertical-offset="435" max-vertical-offset="2685">
+          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
           <folding />
         </state>
       </provider>

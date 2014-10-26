@@ -38,15 +38,15 @@
 
 <div class="container threepoint">
 
-    <div class="col-lg-3 col-lg-offset-1">
+    <div class="col-lg-3 col-lg-offset-2">
         <img src="/img/Travelcc.png">
         <p>Save time and money</p>
     </div>
-    <div class="col-lg-3 col-lg-offset-1">
+    <div class="col-lg-3 ">
         <img src="/img/MeetLocals.png">
         <p>Meet amazing locals</p>
     </div>
-    <div class="col-lg-3 col-lg-offset-1">
+    <div class="col-lg-3">
         <img src="/img/enjoy.png">
         <p>Enjoy your trip</p>
     </div>
