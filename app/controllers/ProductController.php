@@ -15,9 +15,6 @@ class ProductController extends GenericController {
             error_log(print_r($this->request->data, true));
 
 			$product = new ParseObject("Produits");
-			$algolia  = new Client("16KEY7M17V", "f1ea7eed61f3cc5945a3a84556b3ffbf");
-
-            $index = $algolia->initIndex('product');
 
 			$name = $this->extractData('title', $this->request->data);
 			$price = (int) $this->extractData('price', $this->request->data);
@@ -50,11 +47,13 @@ class ProductController extends GenericController {
 
 			try {
 			    $product->save();
-                error_log($product->getObjectId());
+
+                $algolia  = new Client("16KEY7M17V", "f1ea7eed61f3cc5945a3a84556b3ffbf");
+
+                $index = $algolia->initIndex('product');
 
                 $productArray['objectID'] = $product->getObjectId();
                 $index->saveObject($productArray);
-
 
 			} catch (ParseException $ex) {
 			  error_log('Failed to create new object, with error message: ' + $ex->getMessage());
