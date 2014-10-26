@@ -16,11 +16,8 @@ class ProductController extends GenericController {
 
 
         if($this->request->data){
-
-            error_log( mb_strlen('dsfsdf'));
-
+            
 			$product = new ParseObject("Produits");
-
 
 			$name = $this->extractData('title', $this->request->data);
 			$price = (int) $this->extractData('price', $this->request->data);
@@ -40,6 +37,7 @@ class ProductController extends GenericController {
 			$product->set("town", $city);
 			$product->set("owneruserid", User::current()->getObjectId());
 			$product->set("urlpicture", $imgname);
+			$product->set("localization", "48.853, 2.35");
 
 			$productArray = array();
 			$productArray['name'] = $name;
@@ -53,7 +51,6 @@ class ProductController extends GenericController {
 
 			try {
 
-                error_log(print_r($product,true));
 			    $product->save();
 
                 $algolia  = new Client("16KEY7M17V", "f1ea7eed61f3cc5945a3a84556b3ffbf");
