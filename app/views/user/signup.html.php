@@ -28,7 +28,7 @@
                     <input type="submit" class="btn btn-success " value="Signup">
                 </div>
             </div>
-            <span>already member ? <a href="/login">login</a></span>
+            <span class="right">already member ? <a href="/login">login</a></span>
         </fieldset>
     </form>
 

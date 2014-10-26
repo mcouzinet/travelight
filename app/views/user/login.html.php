@@ -28,7 +28,7 @@
                     <input type="submit" class="btn btn-success" value="Login">
                 </div>
             </div>
-            <span>not a member ? <a href="/signup">signup</a></span>
+            <span class="right">not a member ? <a href="/signup">signup</a></span>
         </fieldset>
     </form>
 

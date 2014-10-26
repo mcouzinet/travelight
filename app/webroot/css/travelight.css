@@ -19,7 +19,7 @@
     src: url(/fonts/Lobster.otf);
 }
 
-html, body{font-family: 'roboto';color: darkgrey;height: 100%; min-height: 100%;  }
+html, body{font-family: 'roboto';color: darkgrey;height: 100%; min-height: 100%;}
 body.back { background: url(/img/back.jpg)no-repeat center center fixed;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;  }
 .content{background: rgba(0, 0, 0, 0.2);width: 100%;min-height: 100%;}
 
@@ -37,8 +37,8 @@ body.back { background: url(/img/back.jpg)no-repeat center center fixed;-webkit-
 h4{color:purple;}
 .formlog{max-width:600px;margin:20px auto 0;background-color:#FFFFFF;padding: 40px;border-radius:10px;}
 .formlog legend{text-align: center;color:#000;font-size: 25px}
-.formlog span{float: right}
-.haveResults h1, .haveResults h3{opacity:0;}
+.formlog span.right{float: right}
+.haveResults #header h1, .haveResults #header h3{opacity:0;}
 .haveResults #header h2{font-size: 25px;top:22px;left: 55px;}
 .haveResults #header img{width: 44px;}
 .haveResults #header{padding-top: 32px;}
@@ -46,3 +46,17 @@ h4{color:purple;}
 .haveResults #search{margin: -200px auto 30px;}
 #results{background-color: #fff; padding-top: 25px;}
 .formadd{background-color: white;}
+#imgaddproduct{border: 1px solid darkgray;border-radius: 5px; cursor: pointer;max-width:180px; }
+.spacer100{height: 100px;}
+
+#header a:hover {color: #FFF;}
+
+.list-group-item-success {color: #FFF; background-color: #93C54B;  }
+
+.hit{width: 250px;float: left; height: 300px;border: 1px solid #Efefef;margin:10px; border-radius: 5px;position: relative;margin: 0 10px 20px 10px;}
+.hit .linkimg{width: 250px;position: absolute;top: 0;height:200px;overflow: hidden;-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover; }
+.hit .linkimg img{width: 250px;max-height:200px;}
+.hit .media-body{position: absolute;top:200px;width:240px;height:100px;left:10px;}
+.hit .media-body h4{color: #93C54B; font-size: 15px;font-family: 'Roboto';}
+.hit .media-body h4 em{font-weight: bold;font-style: normal;}
+.hit .media-body .price{position: absolute;bottom:0px;right:10px;font-size: 25px;}

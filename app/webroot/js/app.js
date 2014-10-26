@@ -17,9 +17,8 @@
   // Helper initialization
   var index = 'product';
   var helper = new AlgoliaSearchHelper(algolia, index, {
-    facets: ['tags', 'transaction', 'price'],
     disjunctiveFacets: ['transaction', 'tags'],
-    hitsPerPage: 10
+    hitsPerPage: 12
   });
 
   // Helpers
@@ -34,12 +33,8 @@
   function sortByCountDesc(a, b) { return b.count - a.count; }
   function sortByNumAsc(a, b) { return parseInt(a.label) - parseInt(b.label); }
   var FACETS = {
-    'type': { title: 'Type', sortFunction: sortByCountDesc },
     'tags': { title: 'Tags', sortFunction: sortByCountDesc },
-    'customerReviewCount': { title: '# Reviews' },
-    'price': { title: 'Price', sortFunction: sortByNumAsc },
-    'manufacturer': { title: 'Manufacturer', sortFunction: sortByNumAsc },
-    'transaction': { title: 'Transaction', sortFunction: sortByCountDesc }
+    'transaction': { title: 'Type', sortFunction: sortByCountDesc }
   };
   var refinements = {};
   var maxPrice = 0;

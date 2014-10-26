@@ -3,8 +3,8 @@
 	<img src="/img/logo.png">
 	<h2>Travelight</h2>
     </a>
-	<h1>Sell, Buy, rent or swap travel products</h1>
-	<h3>Save money, meet awesome people, and consume less</h3>
+	<h1>Sell, Buy, rent and swap travel products</h1>
+	<h3>Save money, whenever you want, whenever you go</h3>
 
     <?php if(!$user): ?>
 	<div id="btns">
@@ -47,29 +47,8 @@
             <!-- /Facets -->
 
             <div class="col-sm-9 col-xs-12">
-                <div class="panel panel-default">
-                    <!-- Stats + sort order menu -->
-                    <div class="panel-heading">
-                        <div class="pull-right">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-success dropdown-toggle btn-xs" data-toggle="dropdown">
-                                    <span class="sort-by">Sort by Relevance</span> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#" onclick="sortBy('', this); return false;">Sort by Relevance</a></li>
-                                    <li><a href="#" onclick="sortBy('_price_asc', this); return false;">Lowest Price</a></li>
-                                    <li><a href="#" onclick="sortBy('_price_desc', this); return false;">Highest Price</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <span id="stats">&nbsp;</span>
-                    </div>
-                    <!-- /Stats + sort order menu -->
 
-                    <!-- Hits -->
-                    <div class="panel-body" id="hits"></div>
-                    <!-- /Hits -->
-                </div>
+                <div id="hits"></div>
 
                 <!-- Pagination -->
                 <div id="pagination"></div>
@@ -85,7 +64,7 @@
     <div class="facet">
         <ul class="list-group">
             <!-- facet title -->
-            <li class="list-group-item text-center list-group-item-info"><b>{{ title }}</b></li>
+            <li class="list-group-item text-center list-group-item-success"><b>{{ title }}</b></li>
 
             {{#values}}
             <li class="{{#refined}}refined{{/refined}} list-group-item">
@@ -121,16 +100,15 @@
 <!-- Hit template -->
 <script type="text/template" id="hit-template">
     <div class="hit media">
-        <a class="pull-left" href="{{ url }}">
-            <img class="media-object" src="{{ urlpicture }}" alt="{{ name }}">
+        <a class="pull-left linkimg" href="{{ url }}" style="background: url({{ urlpicture }}) no-repeat center center;background-size: cover;">
         </a>
         <div class="media-body">
-            <h3 class="pull-right text-right text-danger" style="color: red">
+            <h3 class="pull-right text-right text-danger price">
                 ${{ price }}
             </h3>
             <h4>{{{ _highlightResult.name.value }}}</h4>
             <p class="text-muted">
-                {{{ description }}}
+                {{{ shortdescription }}}
             </p>
             <ul class="list-inline">
                 <li>{{{ _highlightResult.type.value }}}</li>
